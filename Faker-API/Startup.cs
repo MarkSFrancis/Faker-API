@@ -28,7 +28,11 @@ namespace Faker_API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+                {
+                    routes.MapAreaRoute("v1", "v1", "{area}/{locale}/{controller}/{action}");
+                }
+            );
         }
     }
 }
