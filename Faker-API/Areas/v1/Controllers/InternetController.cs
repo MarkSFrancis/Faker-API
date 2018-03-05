@@ -5,7 +5,6 @@ namespace Faker_API.Areas.v1.Controllers
 {
     public class InternetController : BaseApiController
     {
-        // TODO
         public IActionResult Avatar() =>
             Result(Faker.Internet.Avatar());
 
@@ -36,22 +35,22 @@ namespace Faker_API.Areas.v1.Controllers
         public IActionResult UserAgent() =>
             Result(Faker.Internet.UserAgent());
 
-        public IActionResult Mac() =>
-            Result(Faker.Internet.Mac());
+        public IActionResult Mac(string separator = ":") =>
+            Result(Faker.Internet.Mac(separator));
 
-        public IActionResult Password() =>
-            Result(Faker.Internet.Password());
+        public IActionResult Password(int length = 10, bool memorable = false, string regexPattern = "\\w", string prefix = "") =>
+            Result(Faker.Internet.Password(length, memorable, regexPattern, prefix));
 
-        public IActionResult Color() =>
-            Result(Faker.Internet.Color());
+        public IActionResult Color(byte baseRed = 0, byte baseGreen = 0, byte baseBlue = 0) =>
+            Result(Faker.Internet.Color(baseRed, baseGreen, baseBlue));
 
         public IActionResult Protocol() =>
             Result(Faker.Internet.Protocol());
 
-        public IActionResult Url() =>
+        public new IActionResult Url() =>
             Result(Faker.Internet.Url());
 
-        public IActionResult UrlWithPath() =>
-            Result(Faker.Internet.UrlWithPath());
+        public IActionResult UrlWithPath(string protocol = null, string domain = null) =>
+            Result(Faker.Internet.UrlWithPath(protocol, domain));
     }
 }
