@@ -48,7 +48,7 @@ namespace Faker_API.Areas.v1.Controllers
         public IActionResult Protocol() =>
             Result(Faker.Internet.Protocol());
 
-        public IActionResult Url() =>
+        public new IActionResult Url() =>
             Result(Faker.Internet.Url());
 
         public IActionResult UrlWithPath() =>
